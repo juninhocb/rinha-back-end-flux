@@ -21,11 +21,11 @@ class PersonRouter(private val personHandler: PersonHandler) {
         return RouterFunctions
             .route(GET("/pessoas/{id}").and(ACCEPT_JSON), personHandler::findById)
             .andRoute(
-            GET("/pessoas").and(ACCEPT_JSON), personHandler::findByCriteria)
+                GET("/pessoas").and(ACCEPT_JSON), personHandler::findByCriteria)
             .andRoute(
-            GET("/contagem-pessoas").and(ACCEPT_JSON), personHandler::count)
+                GET("/contagem-pessoas").and(ACCEPT_JSON), personHandler::count)
             .andRoute(
-            POST("/pessoas").and(CONTENT_TYPE), personHandler::create)
+                POST("/pessoas").and(CONTENT_TYPE), personHandler::create)
 
     }
 

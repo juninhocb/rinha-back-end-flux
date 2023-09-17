@@ -42,21 +42,20 @@ class PersonHandler(private val repository: PersonRepository,
             redisTemplate.opsForValue().set(id, p)
             redisTemplate.opsForValue().set(p.apelido, p)
 
-            val uri = UriComponentsBuilder.fromUriString("/pessoas/{id}").buildAndExpand(id).toUri()
-
+            val uri = UriComponentsBuilder.fromUriString("http://localhost:9999/pessoas/$id").build().toUri()
             ServerResponse.created(uri).build()
         }
 
     }
     fun findById(request: ServerRequest): Mono<ServerResponse> {
-        val id: UUID = UUID.fromString(request.pathVariable("id"))
+        val id = request.pathVariable("id")
 
         val cachedPerson = redisTemplate.opsForValue().get(id)
 
         return if (cachedPerson != null) {
             ServerResponse.ok().bodyValue(cachedPerson)
         } else {
-            ServerResponse.ok().body(repository.findById(id), Person::class.java)
+            ServerResponse.ok().body(repository.findById(UUID.fromString(id)), Person::class.java)
         }
     }
 
@@ -72,5 +71,3 @@ class PersonHandler(private val repository: PersonRepository,
     fun count(request: ServerRequest?) : Mono<ServerResponse>{
         return ServerResponse.ok().body(Mono.just(repository.count()), Long::class.java)
     }
-
-}

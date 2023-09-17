@@ -55,7 +55,7 @@ Content-Type: application/json
 ###
 
 # curl -X POST --data {} http://localhost:8080/pessoas
-POST http://localhost:8080/pessoas
+POST http://localhost:9999/pessoas
 Content-Type: application/json
 
 {
@@ -67,7 +67,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/pessoas/52f799a8-d2d8-4fcb-adb0-a3024d49697d
+GET http://localhost:9999/pessoas/c9cbbb63-b48c-4aed-9f5f-3d30fcd7ae74
 Accept: application/json
 
 ####
