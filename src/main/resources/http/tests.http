@@ -1,0 +1,84 @@
+# curl -X POST --data {} http://localhost:8080/pessoas
+POST http://localhost:8080/pessoas
+Content-Type: application/json
+
+{
+  "apelido" : "ana",
+  "nome" : null,
+  "nascimento" : "1985-09-23",
+  "stack" : null
+}
+
+
+###
+
+# curl -X POST --data {} http://localhost:8080/pessoas
+POST http://localhost:8080/pessoas
+Content-Type: application/json
+
+{
+  "apelido" : "josé",
+  "nome" : "José Roberto",
+  "nascimento" : "2000-10-01",
+  "stack" : ["C#", "Node", "Oracle"]
+}
+
+<> 2023-09-03T004954.500.json
+<> 2023-09-03T004909.422.json
+
+###
+
+# curl -X POST --data {} http://localhost:8080/pessoas
+POST http://localhost:8080/pessoas
+Content-Type: application/json
+
+{
+  "apelido" : "joseph",
+  "nome" : "José Roberto",
+  "nascimento" : "2000-10-01",
+  "stack" : ["C#", "Node", "Oracle"]
+}
+
+###
+
+# curl -X POST --data {} http://localhost:8080/pessoas
+POST http://localhost:8080/pessoas
+Content-Type: application/json
+
+{
+  "apelido" : "joseph",
+  "nome" : "Jose Roberto",
+  "nascimento" : "2000-10-01",
+  "stack" : ["C#", "Node", "Oracle"]
+}
+
+###
+
+# curl -X POST --data {} http://localhost:8080/pessoas
+POST http://localhost:8080/pessoas
+Content-Type: application/json
+
+{
+  "apelido" : "ted",
+  "nome" : "tedjo",
+  "nascimento" : "2000-10-01",
+  "stack" : ["C#", "Node", "Oracle"]
+}
+
+###
+
+GET http://localhost:8080/pessoas/52f799a8-d2d8-4fcb-adb0-a3024d49697d
+Accept: application/json
+
+####
+
+GET http://localhost:8080/pessoas?t=ted
+Accept: application/json
+
+####
+
+GET http://localhost:8080/contagem-pessoas
+
+####
+
+
